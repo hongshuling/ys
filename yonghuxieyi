@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <title>注册|番茄互娱</title>
+</head>
+<body>
+(n && /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(n))
+            if ({
+                11: "北京",
+                12: "天津",
+                13: "河北",
+                14: "山西",
+                15: "内蒙古",
+                21: "辽宁",
+                22: "吉林",
+                23: "黑龙江 ",
+                31: "上海",
+                32: "江苏",
+                33: "浙江",
+                34: "安徽",
+                35: "福建",
+                36: "江西",
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://www.haowanjoy.com:8091`/static/layui/layui.js"></script>
+<script></script>
+<script>
+    function IdentityCodeValid(n) {
+        var r = "", t = !0, i, h;
+        if (n && /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(n))
+            if ({
+                11: "北京",
+                12: "天津",
+                13: "河北",
+                14: "山西",
+                15: "内蒙古",
+                21: "辽宁",
+                22: "吉林",
+                23: "黑龙江 ",
+                31: "上海",
+                32: "江苏",
+                33: "浙江",
+                34: "安徽",
+                35: "福建",
+                36: "江西",
+                37: "山东",
+                41: "河南",
+                42: "湖北 ",
+                43: "湖南",
+                44: "广东",
+                45: "广西",
+                46: "海南",
+                50: "重庆",
+                51: "四川",
+                52: "贵州",
+                53: "云南",
+                54: "西藏 ",
+                61: "陕西",
+                62: "甘肃",
+                63: "青海",
+                64: "宁夏",
+                65: "新疆",
+                71: "台湾",
+                81: "香港",
+                82: "澳门",
+                91: "国外 "
+            }[n.substr(0, 2)]) {
+                if (n.length == 18) {
+                    n = n.split("");
+                    var s = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+                        , f = [1, 0, "X", 9, 8, 7, 6, 5, 4, 3, 2]
+                        , u = 0
+                        , e = 0
+                        , o = 0;
+                    for (i = 0; i < 17; i++)
+                        e = n[i],
+                            o = s[i],
+                            u += e * o;
+                    h = f[u % 11];
+                    f[u % 11] != n[17] && (r = "校验位错误",
+                        t = !1)
+                }
+            } else
+                r = "地址编码错误",
+                    t = !1;
+        else
+            r = "身份证号格式错误",
+                t = !1;
+        return t || alert(r),
+            t
+    }
+
+    $(function () {
+        $('#btnLogin').click(function () {
+            layui.use(['element', 'layer'], function () {
+                var element = layui.element, layer = layui.layer;
+
+                var userName = $("#txtUserName").val().toLowerCase();
+                if (userName == '') {
+                    $("#labState").text("请输入用户名");
+                    $("#txtUserName")[0].focus();
+                    $("#divUserName").append($("#labState"));
+                    return;
+                } else {
+                    $("#divUserName #labState").text("").appendTo("#divLoading")
+                }
+                var userPwd = $("#txtUserPwd").val();
+                if (userPwd == '') {
+                    $("#labState").text("请输入密码");
+                    $("#txtUserPwd")[0].focus();
+                    $("#divUserPwd").append($("#labState"));
+                    return;
+                } else {
+                    if (userPwd.length < 6) {
+                        $("#labState").text("密码太短，需要6-30位");
+                        $("#txtUserPwd")[0].focus();
+                        $("#divUserPwd").append($("#labState"));
+                        return;
+                    }
+                    if (userPwd.length > 30) {
+                        $("#labState").text("密码太长，需要6-30位");
+                        $("#txtUserPwd")[0].focus();
+                        $("#divUserPwd").append($("#labState"));
+                        return;
+                    }
+                    $("#divUserPwd #labState").text("").appendTo("#divLoading")
+                }
+                var agianPwd = $("#txtAgainPwd").val();
+                if (agianPwd == '') {
+                    $("#labState").text("请输入确认密码");
+                    $("#txtAgainPwd")[0].focus();
+                    $("#divAgainPwd").append($("#labState"));
+                    return;
+                } else {
+                    if (agianPwd.length < 6) {
+                        $("#labState").text("密码太短，需要6-30位");
+                        $("#txtAgainPwd")[0].focus();
+                        $("#divAgainPwd").append($("#labState"));
+                        return;
+                    }
+                    if (agianPwd.length > 30) {
+                        $("#labState").text("密码太长，需要6-30位");
+                        $("#txtAgainPwd")[0].focus();
+                        $("#divAgainPwd").append($("#labState"));
+                        return;
+                    }
+                    if (agianPwd != userPwd) {
+                        $("#labState").text("两次密码输入不一致");
+                        $("#txtAgainPwd")[0].focus();
+                        $("#divAgainPwd").append($("#labState"));
+                        return;
+                    }
+                    $("#divAgainPwd #labState").text("").appendTo("#divLoading")
+                }
+                var email = $("#txtEmail").val();
+                if (email == '') {
+                    $("#labState").text("请输入邮箱");
+                    $("#txtEmail")[0].focus();
+                    $("#divEmail").append($("#labState"));
+                    return;
+                } else {
+                    var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+                    if (!re.test(email)) {
+                        $("#labState").text("邮箱格式不正确");
+                        $("#txtEmail")[0].focus();
+                        $("#divEmail").append($("#labState"));
+                        return;
+                    }
+                    $("#divEmail #labState").text("").appendTo("#divLoading")
+                }
+                var fullName = $("#txtFullName").val().trim();
+                if (fullName == '') {
+                    $("#labState").text("请输入真实姓名")
+                    $("#txtFullName")[0].focus();
+                    $("#divFullName").append($("#labState"));
+                    return;
+                } else {
+                    $("#divFullName #labState").text("").appendTo("#divLoading")
+                }
+                var idCard = $("#txtIdCard").val().trim().toUpperCase();
+                if (idCard == '') {
+                    $("#labState").text("请输入证件号码");
+                    $("#txtIdCard")[0].focus();
+                    $("#divIdCard").append($("#labState"));
+                    return;
+                } else {
+                    if (idCard.length != 18) {
+                        $("#labState").text("请输入18位二代身份证号码");
+                        $("#txtIdCard")[0].focus();
+                        $("#divIdCard").append($("#labState"));
+                        return;
+                    }
+                    if (!IdentityCodeValid(idCard)) {
+                        $("#labState").text("身份证号码格式错误");
+                        $("#txtIdCard")[0].focus();
+                        $("#divIdCard").append($("#labState"));
+                        return;
+                    }
+                    $("#divIdCard #labState").text("").appendTo("#divLoading")
+                }
+                if (!$('#checkbox').prop('checked')) {
+                    layer.alert('请阅读并同意番茄互娱注册协议！', {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                    });
+                    return;
+                } else {
+                    $("#divIdCard #labState").text("").appendTo("#divLoading")
+                }
+
+                if (!$('#checkbox1').prop('checked')) {
+                    layer.alert('请阅读并同意番茄用户协议！', {
+                        icon: 2,
+                        skin: 'layer-ext-moon'
+                    });
+                    return;
+                } else {
+                    $("#divIdCard1 #labState").text("").appendTo("#divLoading")
+                }
+                $.ajax({
+                    url: '/register' + '?userName=' + userName + '&userPwd=' + userPwd + '&realName=' + fullName + '&idNo=' + idCard + '&email=' + email,
+                    type: 'GET',
+                    success: function (obj) {
+                        console.log(obj.success)
+                        console.log(obj.message)
+                        if (obj.success) {
+                            layer.alert('恭喜您注册成功!', {
+                                icon: 1,
+                                skin: 'layer-ext-moon'
+                            }, function () {
+                                window.location.replace('http://www.haowanjoy.com/haowanjoy/wp-login.php');
+                            });
+                        } else {
+                            layer.alert(obj.message, {
+                                icon: 2,
+                                skin: 'layer-ext-moon'
+                            });
+                        }
+                    },
+                    error: function (xhr, errorType, error) {
+                        layer.alert('注册失败！', {
+                            icon: 2,
+                            skin: 'layer-ext-moon'
+                        });
+                    }
+                });
+
+            });
+        });
+    });
+</script>
+
+<style>
+    #labState {
+
+        margin-left: 22%;
+        color: red;
+    }
+
+    .foot-left {
+        border: skyblue solid 0px;
+        display: inline-block;
+    }
+
+    .foot-right {
+        margin-right: 5%;
+        margin-top: 8px;
+        text-align: left;
+        border: skyblue solid 0px;
+        display: inline-block;
+        float: right;
+    }
+
+    .foot-right a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .foot-middle {
+        margin-top: 8px;
+        border: skyblue solid 0px;
+        width: 300px;
+        height: 100px;
+        display: inline-block;
+        margin-left: 35%;
+    }
+
+    .foot {
+        color: white;
+        position: absolute;
+        left: 0;
+        margin-bottom: 0px;
+        width: 100%;
+        background: #1c1c1c;
+        height: 100px;
+    }
+
+    #btnLogin {
+        margin-left: 30%;
+    }
+
+    .um-title {
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .indexbody {
+        margin-left: 30%;
+        align-self: center;
+        margin-top: 5%;
+        width: 40%;
+        border: skyblue solid 0px;
+        padding: 20px;
+    }
+
+    .input-line {
+        width: 1000px;
+        font-weight: lighter;
+        border: skyblue solid 0px;
+        margin-left: 1px;
+        margin: 15px;
+    }
+
+    .caption {
+        font-size: 15px;
+        display: inline-block;
+        border: skyblue solid 0px;
+        height: 31px;
+        width: 159px;
+        text-align: right;
+    }
+
+    .input-line input {
+        left: 30px;
+
+    }
+</style>
+</html>
