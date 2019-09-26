@@ -3,25 +3,102 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="Content-Language" content="zh-CN"/>
-    <title>注册|番茄互娱</title>
+    <title>飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒飒岁|番茄互娱</title>
 </head>
 <body>
-(n && /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(n))
-            if ({
-                11: "北京",
-                12: "天津",
-                13: "河北",
-                14: "山西",
-                15: "内蒙古",
-                21: "辽宁",
-                22: "吉林",
-                23: "黑龙江 ",
-                31: "上海",
-                32: "江苏",
-                33: "浙江",
-                34: "安徽",
-                35: "福建",
-                36: "江西",
+<div class="indexbody" style="border: #1c1c1c solid 0px;height: 600px">
+    <form>
+        <div class="um-container umbody">
+            <div class="input-line" style="font-weight: bolder;text-align: center;margin-bottom: 10%"><span
+                    style="margin-left: -50%">注册番茄互娱网络通行证</span></div>
+            <div class="input-line" id="divUserName">
+                <span class="caption">用户名：</span>
+                <span class="text-container">
+                        <input type="text" class="login-input" id="txtUserName" tabindex="1"/>
+                    </span>
+                &nbsp;<span>用户名只允许字母、数字和下划线</span>
+            </div>
+            <div class="input-line" id="divUserPwd">
+                <span class="caption">密　码：</span>
+                <span class="text-container">
+                        <input type="password" class="login-input" id="txtUserPwd" tabindex="2"/>
+                    </span>
+                &nbsp;<span>请设置6-30位长度的密码</span>
+            </div>
+            <div class="input-line" id="divAgainPwd" style="">
+                <span class="caption">再次输入密码：</span>
+                <span class="text-container">
+                        <input type="password" class="login-input" id="txtAgainPwd" tabindex="3"/>
+                    </span>
+                &nbsp;<span>请设置6-30位长度的密码</span>
+            </div>
+            <div class="input-line" id="divEmail">
+                <span class="caption">邮　箱：</span>
+                <span class="text-container">
+                        <input type="text" class="login-input" id="txtEmail" tabindex="4"/>
+                    </span>
+                &nbsp;<span>请输入正确的邮箱地址</span>
+            </div>
+            <div class="input-line">
+                <span class="caption" style="font-weight: bolder;font-size: 16px">请完善您的真实信息</span>
+                <span class="text-container">&nbsp;&nbsp;&nbsp;<span style="color: #999;font-size: 12px">根据国家相关规定要求及您的个人安全保障，网络游戏用户需要使用有效身份证进行实名注册。</span><br>
+                    <span style="color: #bbb;font-size: 14px"> 该实名认证信息用于本次认证以及防沉迷系统等涉及身份信息的服务，请务必准确填写，未满十八周岁的账号将会被纳入网络游戏防沉迷系统。</span>
+                    </span>
+            </div>
+            <div class="input-line" id="divFullName">
+                <span class="caption">真实姓名：</span>
+                <span class="text-container">
+                        <input type="text" class="login-input" id="txtFullName" tabindex="5"/>
+                    </span>
+                &nbsp;<span>请输入姓名</span>
+            </div>
+            <div class="input-line" id="divIdCard">
+                <span class="caption">身份证号：</span>
+                <span class="text-container">
+                        <input type="text" class="login-input" id="txtIdCard" tabindex="6"/>
+                    </span>
+                &nbsp;<span>请输入证件号码</span>
+            </div>
+            <div class="input-line" id="divRule" style="text-align:center;margin-left: -200px">
+                <input type="checkbox" id="checkbox" checked="">
+                <span>我已阅读并同意</span>
+                <a href="http://www.haowanjoy.com/haowanjoy/?page_id=136"
+                   target="_blank"><span>«番茄互娱注册协议»</span></a>
+            </div>
+            <div class="input-line" id="divRule1" style="text-align:center;margin-left: -200px">
+                <input type="checkbox" id="checkbox1" checked="">
+                <span>我已阅读并同意</span>
+                <a href="http://www.haowanjoy.com/haowanjoy/?page_id=138"
+                   target="_blank"><span>«番茄用户协议»</span></a>
+            </div>
+            <div class="input-line" style="margin-left: -50px">
+                <input type="button" id="btnLogin" value="立即注册" tabindex="8"/>
+            </div>
+            <div id="divLoading">
+                <div id="labState"></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="foot">
+    <div class="foot-left">
+    </div>
+    <div class="foot-middle">
+        抵制不良游戏，拒绝盗版游戏，<br>注意自我保护，谨防受骗上当，<br>适度游戏益脑，沉迷游戏伤身，<br>合理安排时间，享受健康生活。
+    </div>
+    <div class="foot-right">
+        <a href="http://www.jsdsgsxt.gov.cn/mbm/entweb/elec/certView.shtml?siteId=a46d4466938e4a3791087f7253041b7a">
+        </a> 苏ICP备15023507号<br>
+        <a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/5f910e6bf2754d8ead62ff11a1b57418"
+           target="_blank" rel="noopener"><img class="" src="http://www.tomatojoy.cn/Content/images/wen.png" width="20"
+                                               height="20"/>苏网文〔2017〕8842-167号  </a><br>
+
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32059002001718" target="_blank"
+           rel="noopener"><img class="" src="http://www.tomatojoy.cn/Content/images/bei1.png" width="20" height="20"/>苏公网安备
+            32059002001718号</a>
+    </div>
+</div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="http://www.haowanjoy.com:8091`/static/layui/layui.js"></script>
